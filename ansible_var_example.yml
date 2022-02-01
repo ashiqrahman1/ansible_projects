@@ -1,0 +1,17 @@
+---
+- name: "ansible variable example"
+  hosts: all
+  vars:
+          pkg: httpd         # passing variable
+          name: http_user
+  tasks:
+  - name: "adding package via variable"
+    dnf:
+      name: "{{ pkg }}"
+      state: present
+  - name: "add {{ name }} "
+    user:
+       name: "{{ name }}"
+       uid: 5432
+       state: present
+               
