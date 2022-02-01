@@ -1,0 +1,17 @@
+---
+- name: "install updates on servers"
+  hosts: servers
+  tasks:
+  - name: "updating redhat server"
+    dnf:
+      update_cache: yes
+    when: ansible_os_family == "RedHat"
+
+  - name: "update ubuntu servers"
+    apt:
+      update_cache: yes
+    when: ansible_os_family == "Debian"
+
+- hosts: db
+  roles:
+  - mysql
