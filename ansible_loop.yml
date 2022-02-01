@@ -1,0 +1,12 @@
+---
+- name: "ansible loop example"
+  hosts: all
+  tasks:
+  - name: "adding package and users via loop"
+    user:
+       name: '{{ item }}'
+       state: present
+    loop:
+       - ashik
+       - aslah
+       - ablaj
