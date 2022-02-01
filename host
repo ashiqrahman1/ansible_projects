@@ -1,5 +1,7 @@
 node2
 
+ubuntu ansible_user=ubuntu
+
 [web]
 node1
 
