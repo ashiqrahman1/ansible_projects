@@ -9,10 +9,11 @@ node1
 [redhat]
 node1
 node2
+#node3
 
 [servers:children]
 redhat
 ubuntu
 
-#[db]
-#node3
+[db]
+node2
