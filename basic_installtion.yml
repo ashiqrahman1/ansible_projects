@@ -1,0 +1,17 @@
+---
+- name: "install and update packages"
+  hosts: all
+  pre_tasks:
+  - name: "updating the system"
+    dnf:
+      update_cache: yes
+  tasks:
+  - name: "install httpd"
+    dnf:
+      name: httpd
+      state: present
+  - name: "start and enable httpd"
+    service:
+          name: httpd
+          state: started
+          enabled: yes
