@@ -1,0 +1,10 @@
+---
+- name: "adding users via ansible"
+  hosts: all
+  tasks:
+  - name: "adding users..."
+    user:
+       name: test
+       uid: 9999
+       shell: "/bin/bash"
+  
