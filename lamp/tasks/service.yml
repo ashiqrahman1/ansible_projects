@@ -1,0 +1,9 @@
+---
+- name: "start services"
+  service:
+        name: "{{ item }}"
+        state: started
+  loop:
+     - apache2
+     - mysql
+

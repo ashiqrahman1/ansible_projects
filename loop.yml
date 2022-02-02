@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  tasks:
+  - name: "adding users via loop"
+    user:
+       name: "{{ item.name }}"
+       uid: "{{ item.uid }}"
+    loop:
+    - name: ashik
+      uid: 7363
+    - name: aslah
+      uid: 9583

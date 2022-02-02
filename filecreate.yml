@@ -1,0 +1,15 @@
+---
+- name: "create file"
+  hosts: localhost
+  tasks:
+  - name: "creating file"
+    file:
+       path: /home/ec2-user/test
+       state: touch
+       owner: ec2-user
+       group: ec2-user
+  - name: "adding content to file"
+    lineinfile:
+       path: /etc/selinux/config
+       regexp: "^SELINUX="
+       line: "SELINUX=enforcing" 

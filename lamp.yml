@@ -1,0 +1,19 @@
+---
+- name: "install lamp"
+  hosts: servers
+  pre_tasks:
+  - name: "update Redhat"
+    dnf:
+      update_cache: yes
+    when: ansible_os_family == "RedHat"
+  - name: "update ubuntu pc"
+    apt:
+      update_cache: yes
+    when: ansible_os_family == "Debian"
+
+
+- hosts: ubuntu
+  roles:
+    - lamp
+
+

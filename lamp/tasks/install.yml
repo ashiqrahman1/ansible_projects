@@ -1,0 +1,10 @@
+---
+- name: "install required files"
+  apt:
+    name:
+       - apache2
+       - mysql-server
+       - php
+       - libapache2-mod-php
+       - php-mysql
+    state: present

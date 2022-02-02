@@ -1,0 +1,7 @@
+---
+- name: "configure the services"
+  copy:
+  - name: "adding index files"
+    src: files/index.html
+    dest: /var/www/html/index.html
+  notify: restart apache2
